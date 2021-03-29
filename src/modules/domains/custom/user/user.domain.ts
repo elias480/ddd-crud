@@ -2,6 +2,7 @@ import {Domain} from "../../domain";
 import {Name} from "../../../DTO/value-object/name";
 import {Surname} from "../../../DTO/value-object/surname";
 import {Hashmap} from "../../../DTO/hashmap";
+import {GenericMapper} from "../../../mapper/generic.mapper";
 
 export class User implements Domain {
     private readonly _name: Name;
@@ -21,11 +22,7 @@ export class User implements Domain {
     }
 
     public toDTO(): Hashmap  {
-        console.log('Convert to DTO');
-        return {
-            name: this.name,
-            surname: this.surname
-        };
+        return GenericMapper.toHashmap(this);
     }
 
     public whoAmI(): String {
