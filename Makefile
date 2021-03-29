@@ -38,5 +38,5 @@ run-docker:
 DOCKER_TAG = latest
 
 .PHONE: test
-test:
+test: build
 	@npm test
